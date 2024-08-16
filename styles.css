@@ -1,0 +1,102 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+}
+
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+ul {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+}
+
+#root,
+#__next {
+	isolation: isolate;
+}
+
+.container {
+	height: 100vh;
+    display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+        "sidebar header  header  header  header  header  header  header"
+        "sidebar content content content content content content content"
+        "sidebar content content content content content content content"
+        "sidebar content content content content content content content"
+        "sidebar content content content content content content content"
+        "sidebar content content content content content content content";
+}
+
+.sidebar {
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-area: sidebar;
+    background-color: #1e40af;
+    color: white;
+}
+
+.logo {
+    padding-top: 1rem;
+    padding-left: 2rem;
+    font-size: 2rem;
+}
+
+.sidebar > ul {
+    font-size: 1.5rem;
+    padding-left: 3rem;
+    padding-bottom: 3rem;
+}
+
+ul > li {
+    margin-bottom: 1rem;
+}
+
+.header {
+    display: grid;
+    grid-area: header;
+    background-color: #ddeaff;   
+}
+
+.content {
+    display: grid;
+    grid-area: content;
+    background-color: #ffffff;
+}
+
