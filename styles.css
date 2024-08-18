@@ -53,9 +53,11 @@ ul {
 	font-family: "REM", sans-serif;
 	background-color: rgb(255, 255, 255);
 	grid-template-columns: minmax(250px, 325px) repeat(7, 1fr);
-	grid-template-rows: minmax(175px, 275px), repeat(5, 1fr);
+	grid-template-rows: repeat(8, 1fr);
 	grid-template-areas:
 		"logo    header  header  header  header  header  header  header"
+		"sidebar content content content content content content content"
+		"sidebar content content content content content content content"
 		"sidebar content content content content content content content"
 		"sidebar content content content content content content content"
 		"sidebar content content content content content content content"
@@ -115,7 +117,7 @@ li:active {
     cursor: grabbing;
 }
 
-/* Header and header content styling */
+/* Header styling */
 
 .header {
 	display: grid;
@@ -196,7 +198,43 @@ button {
 	font-family: "REM";
 }
 
+/* Content styling */
+
 .content {
 	display: grid;
+	margin: 30px;
 	grid-area: content;
+	grid-template-columns: 3fr 1fr;
+	grid-template-rows: 1fr 20fr;
+	grid-template-areas: 
+	"main-heading side-heading"
+	"main-content side-content";
+}
+
+.main-heading {
+	grid-area: main-heading;
+}
+
+.side-heading {
+	grid-area: side-heading;
+}
+
+.main-content {
+	display: grid;
+	grid-area: main-content;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+}
+
+.content-card {
+	height: 300px;
+	width: 500px;
+	margin: 10px;
+	justify-self: center;
+	align-self: center;
+	border: 5px solid #3BA55C;
+}
+
+.side-content {
+	grid-area: side-content;
 }
